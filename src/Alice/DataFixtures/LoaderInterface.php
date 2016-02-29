@@ -26,10 +26,11 @@ interface LoaderInterface
      *
      * @param PersisterInterface $persister     Class used to persist fixtures.
      * @param string[]           $fixturesFiles Path to the fixtures files to loads.
+     * @param \object[]          $objects       External object reference
      *
      * @return \object[] Persisted objects
      */
-    public function load(PersisterInterface $persister, array $fixturesFiles);
+    public function load(PersisterInterface $persister, array $fixturesFiles, array $objects = []);
 
     /**
      * @return ProcessorInterface[]
