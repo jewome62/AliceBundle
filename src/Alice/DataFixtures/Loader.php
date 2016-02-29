@@ -70,7 +70,7 @@ class Loader implements LoaderInterface
     /**
      * {@inheritdoc}
      */
-    public function load(PersisterInterface $persister, array $fixturesFiles)
+    public function load(PersisterInterface $persister, array $fixturesFiles, array $objects = [])
     {
         if ($this->fixturesLoader instanceof FixturesLoader) {
             $_persister = $this->fixturesLoader->getPersister();
@@ -81,7 +81,6 @@ class Loader implements LoaderInterface
             return [];
         }
 
-        $objects = [];
         $loadFileAttempts = 0;
         $normalizedFixturesFiles = $this->normalizeFixturesFiles($fixturesFiles);
 
